@@ -1,12 +1,41 @@
 body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
     background-color: #E6B3A9;
     font-family: 'Poppins', sans-serif; 
+    border: solid 2px #ffff;
 }
 
-#home {
-    box-sizing: border-box;
-    border: solid 2px #EEA191;
-    width: 50px;
-    height: 25px;
-    text-align: center; 
+a {
+    background-color: #ffff;
+    border: solid 1px #000000;
+    color: #000000;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
 }
+
+.container {
+    text-align: center;
+}
+
+input{
+    display: flex;
+    margin: 8px;
+}
+
+.submit {
+    background-color: #ffff;
+    border: solid 1px #000000;
+    color: #000000;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+
+audio { display:none;}
