@@ -9,5 +9,5 @@ This chat app is made with PHP, SQL, HTML, CSS, JS
 
 ***
 
-First you get on welcome page. The you have to choose do you create new account or login. If your login information is wrong or you don't have it you go to error page,
+First you get on welcome page. Then you have to choose do you create new account or login. If your login information is wrong or you don't have it you go to error page,
 but if you manage to get in you get into landing page. There you see your contacts. At this project every user is everyones contact. There you can choose who you want to message and after that you get into chat UI.
