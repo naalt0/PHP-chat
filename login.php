@@ -46,13 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $login_err = header(location: error.php");
                         }
                     }
-                } else{
-                    
-                    $login_err = "Invalid username or password.";
                 }
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
 
             
             mysqli_stmt_close($stmt);
