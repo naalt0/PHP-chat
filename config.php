@@ -1,12 +1,11 @@
 <?php
-define('DB_SERVER', 'hyvis.mysql.database.azure.com');
-define('DB_USERNAME', 'db_projekti');
-define('DB_PASSWORD', 'Sivyh2022');
-define('DB_NAME', 'chat');
+$servername = "hyvis.mysql.database.azure.com";
+$username = "db_projekti";
+$password = "Sivyh2022";
+$dbname = "chat";
  
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+/*$conn = mysqli_connect($servername, $username, $password, $dbname);
+if(!$conn){
+  echo "Database connection error".mysqli_connect_error();
+}*/
 ?>
