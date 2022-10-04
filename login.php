@@ -1,61 +1,32 @@
-<?php
-
-session_start();
-
-require_once "config.php";
- 
-$username = $password = "";
-$username_err = $password_err = $login_err = "";
- 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-    if(empty($username_err) && empty($password_err)){
-        
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
-        
-        if($stmt = mysqli_prepare($link, $sql)){
-            
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
-            
-            $param_username = $username;
-            
-            
-            if(mysqli_stmt_execute($stmt)){
-                
-                mysqli_stmt_store_result($stmt);
-                
-                
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
-                            
-                            session_start();
-                            
-                           
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
-                            
-                            
-                            header("location: landing.php");
-                        } else{
-                            
-                            $login_err = header(location: error.php");
-                        }
-                    }
+<?php 
+    session_start();
+    include_once "config.php";
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    if(!empty($username) && !empty($password)){
+        $sql = mysqli_query($conn, "SELECT * FROM users WHERE username = '{$username}'");
+        if(mysqli_num_rows($sql) > 0){
+            $row = mysqli_fetch_assoc($sql);
+            $user_pass = md5($password);
+            $enc_pass = $row['password'];
+            if($user_pass === $enc_pass){
+                $status = "Active now";
+                $sql2 = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = {$row['unique_id']}");
+                if($sql2){
+                    $_SESSION['unique_id'] = $row['unique_id'];
+                    echo "success";
+                }else{
+                    echo "Something went wrong. Please try again!";
                 }
-
-            
-            mysqli_stmt_close($stmt);
+            }else{
+                echo "Username or Password is Incorrect!";
+            }
+        }else{
+            echo "$username - This username not Exist!";
         }
+    }else{
+        echo "All input fields are required!";
     }
-    
-    
-    mysqli_close($link);
-}
 ?>
 
 

@@ -14,6 +14,5 @@
                 to start a chat
             </h3>
         </div>
-        <!-- testi -->
     </body>
 </html>
