@@ -1,7 +1,6 @@
-<?php 
-include 'config.php'; 
+<?php
+include_once "config.php";
 ?>
-
 <html>
     <head>
         <meta charset utf-8>
