@@ -7,11 +7,12 @@ if(isset($_POST['submit'])){
 
     $sql = "INSERT INTO User (pwd, username) VALUES ('$password', '$username')";
     mysqli_query($conn, $sql);
+
+    header("location: landing.php");
 }
+
 $check_dublicate = "SELECT (username) FROM User WHERE (username) = '$username' ";
-
 $result = mysqli_query($conn, $check_dublicate);
-
 $count = mysqli_num_rows($result);
 
 if($count < 0){

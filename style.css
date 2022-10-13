@@ -1,8 +1,21 @@
 body {
-    background-color: #E6B3A9;
+    border: solid 2px #EC008C;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #404040;
     font-family: 'Poppins', sans-serif;
+    color: #ffff;
+    font-size: larger;
 }
 
 .header {
     text-align: center;
+    border: solid 2px #EC008C;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #EC008C;
 }

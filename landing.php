@@ -1,5 +1,3 @@
-
-
 <html>
     <head>
         <meta charset utf-8>
@@ -29,6 +27,7 @@
                             <div class="details">
                                 <span>Neo</span>
                                 <p>lorem ipsum</p>
+                                <a href="chat.php">tästä</a>
                             </div>
                         </div>
                     </a>

@@ -2,14 +2,14 @@ body {
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: #E6B3A9;
+    background-color: #404040;
     font-family: 'Poppins', sans-serif; 
-    border: solid 2px #ffff;
+    border: solid 2px #EC008C;
 }
 
 a {
     background-color: #ffff;
-    border: solid 1px #000000;
+    border: solid 2px #EC008C;
     color: #000000;
     padding: 2px 5px;
     text-align: center;
@@ -29,7 +29,7 @@ input{
 
 .submit {
     background-color: #ffff;
-    border: solid 1px #000000;
+    border: solid 2px #EC008C;
     color: #000000;
     padding: 2px 5px;
     text-align: center;
