@@ -1,6 +1,18 @@
 <?php
 include "config.php";
 session_start();
+
+if(isset($_GET['submit'])){
+    $username = $_GET['username'];
+    $password = $_GET['password'];
+
+    $sql = "SELECT * FROM User WHERE ('$username') = username, ('$password') = pwd";
+    mysqli_query($conn, $sql);
+
+    header("location: landing.php");
+}
+
+
 ?>
 
 <html>
@@ -17,7 +29,7 @@ session_start();
                     <button class="submit" type="submit">Login</button>
                     <label> 
                         <a href="index.php">Home</a>
-                        <a href="landing.php"></a>
+                        <!--a href="landing.php"></a-->
                     </label>
                 </div>
 
