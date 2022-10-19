@@ -20,7 +20,6 @@ if($count < 0){
     return false;
 }
 
-$conn -> close();
 ?>
 
 <html>

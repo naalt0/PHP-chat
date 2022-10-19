@@ -1,38 +1,40 @@
+<?php
+session_start();
+include("config.php");
+
+if(isset($_SESSION['userID'])){
+    header("location: login.php");
+}
+
+$sql = mysqli_query($conn, "SELECT * FROM User WHERE userID = {$_SESSION['userID']}");
+if(mysqli_num_rows($sql) > 0){
+    $row = mysqli_fetch_assoc($sql);
+}
+?>
+
 <html>
     <head>
-        <meta charset utf-8>
-        <title>Landing</title>
-        <link rel="stylesheet" href="landing.css">
+        <title>Contacts</title>
     </head>
-    <body>
-        <div class="wrapper">
-            <selecton class="users">
-                <header>
-                    <div class="content">
-                        <div class="details">
-                            <span>Neo</span>
-                            <p>Active now</p>
-                        </div>
-                    </div>
-                    <a href="index.php" class="logout">Logout</a>
-                </header>
-                <div class="search">
-                    <span class="text">Select an user to start chat</span>
-                    <input type="tetx" placeholder="enter name to search">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                <div class="user-list">
-                    <a href="#">
-                        <div class="content">
-                            <div class="details">
-                                <span>Neo</span>
-                                <p>lorem ipsum</p>
-                                <a href="chat.php">tästä</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </selecton>
+    <div class="wrapper">
+    <section class="users">
+      <header>
+        <div class="content">
+          <div class="details">
+            <span><?php echo $row['username'] ?></span>
+          </div>
         </div>
-    </body>
+        <a href="php/logout.php?logout_id=<?php echo $row['userID']; ?>" class="logout">Logout</a>
+      </header>
+      <div class="search">
+        <span class="text">Select an user to start chat</span>
+      </div>
+      <div class="users-list">
+
+  
+      </div>
+    </section>
+  </div>
+
+</body>
 </html>
