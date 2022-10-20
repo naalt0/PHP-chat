@@ -1,27 +1,24 @@
 <?php 
   session_start();
-  include_once "config.php";
+  include ("config.php");
+  
   if(isset($_SESSION['userID'])){
     header("location: login.php");
-  }
+}
+
+  $sql = "SELECT * FROM Message, User WHERE username = user1";
+  $result = mysqli_query($conn, $sql);
+  $check = mysqli_num_rows($result);
+
 ?>
 
 <body>
   <div class="wrapper">
     <section class="chat-area">
       <header>
-        <?php 
-          $user_id = mysqli_real_escape_string($conn, $_GET['userID']);
-          $sql = mysqli_query($conn, "SELECT * FROM User WHERE userID = {$user_id}");
-          if(mysqli_num_rows($sql) > 0){
-            $row = mysqli_fetch_assoc($sql);
-          }else{
-            header("location: landing.php");
-          }
-        ?>
+     
 
         <div class="details">
-          <span><?php echo $row['username'] ?> </span>
         
         </div>
       </header>
@@ -29,9 +26,12 @@
 
       </div>
       <form action="#" class="typing-area">
-        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+        <input type="text" class="incoming_id" name="incoming_id" value="<?php 
+        while($row = $result -> fetch_array()); 
+        echo ""; ?>" hidden>
+
         <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
-        <button><i class="fab fa-telegram-plane"></i></button>
+        <button><i class="fab fa-telegram-plane"></i>Send</button>
       </form>
     </section>
   </div>

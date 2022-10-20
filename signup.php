@@ -19,7 +19,6 @@ if($count < 0){
     echo "<h1>Already in use. Please use another user name!</h1>";
     return false;
 }
-
 ?>
 
 <html>
