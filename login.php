@@ -32,13 +32,7 @@
         <body>
             <form action = "" method = "post">
                 <div class="container">
-                    <?php 
-                       /* if(isset($error)){
-                            foreach($error as $error){
-                                echo "<p>Homo</p>";
-                            };
-                        };*/
-                    ?>
+                  
                     <input type="text" placeholder="Enter Username" name="username" required>
                     <input type="password" placeholder="Enter Password" name="pwd" required>
                     <button name="submit" class="submit" type="submit">Login</button>
