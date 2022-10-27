@@ -10,15 +10,6 @@ if(isset($_POST['submit'])){
 
     header("location: landing.php");
 }
-
-$check_dublicate = "SELECT (username) FROM User WHERE (username) = '$username' ";
-$result = mysqli_query($conn, $check_dublicate);
-$count = mysqli_num_rows($result);
-
-if($count < 0){
-    echo "<h1>Already in use. Please use another user name!</h1>";
-    return false;
-}
 ?>
 
 <html>

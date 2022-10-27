@@ -1,15 +1,6 @@
 <?php
-session_start();
 include("config.php");
 
-if(isset($_SESSION['userID'])){
-    header("location: login.php");
-}
-
-$sql = mysqli_query($conn, "SELECT * FROM Contact, User WHERE user1 = 'username' ");
-if(mysqli_num_rows($sql) > 0){
-    $row = mysqli_fetch_assoc($sql);
-}
 ?>
 
 <html>
@@ -17,30 +8,17 @@ if(mysqli_num_rows($sql) > 0){
         <title>Contacts</title>
     </head>
     <div class="wrapper">
-    <section class="users">
-      <header>
-        <div class="content">
-          <div class="details">
-          
-          </div>
-        </div>
-      
-      </header>
-      <div class="search">
-        <span class="text">Select an user to start chat</span>
-      </div>
-      <div class="users-list">
-      <?php
-            $sql = "SELECT username FROM User"
-            while()
-          ?>
+  
+      <div class="room-list">
+
+      <form id="form" name="form" method="post">
+      <button><a href="chat.php">Join room</a></button>
+    </form>
      
-      <a href="chat.php">seuraava</a>
 
   
       </div>
     </section>
   </div>
-
 </body>
 </html>
