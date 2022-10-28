@@ -6,7 +6,7 @@ This chat app is made with PHP, SQL, HTML, CSS, JS
 ***
 
 This is made to work only at localhost!
-***
+----
 You need to have images folder to able use photo upload properly
 
 ***
