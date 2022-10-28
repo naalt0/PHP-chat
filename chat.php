@@ -28,7 +28,7 @@ if (isset($_POST['upload'])) {
  
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = ".\localhost\." . $filename;
+    $folder = "./image/" . $filename;
  
     $sql = "INSERT INTO Pics (filename) VALUES ('$filename')";
  
@@ -50,7 +50,7 @@ if (isset($_POST['upload'])) {
  
         while ($data = mysqli_fetch_assoc($result)) {
     ?>
-        <img src=".\localhost\.<?php echo $data['filename']; ?>">
+        <img src="./image/<?php echo $data['filename']; ?>">
  
     <?php
         }
