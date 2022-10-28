@@ -1,7 +1,7 @@
 # Chat-webapp
 Chat with database
 
-This chat app is made with PHP, SQL, HTML, CSS, JS
+This chat app is made with PHP, SQL, HTML, CSS
 
 ***
 
@@ -9,5 +9,18 @@ This chat app is made with PHP, SQL, HTML, CSS, JS
 
 ***
 
-First you get on welcome page. Then you have to choose do you create new account or login. If your login information is wrong or you don't have it you go to error page,
-but if you manage to get in, you then get into landing page. There you see your contacts. At this project every user is everyones contact. There you can choose who you want to message and after that you get into chat UI.
+1. You need to make account to proceed
+
+***
+
+2. After that you need to login
+
+***
+
+3. then you get "landing page" where you get into the room
+
+***
+
+4. at room you can send messages and upload photos with everyone.
+
+***
