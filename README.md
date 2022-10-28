@@ -27,7 +27,7 @@ You need to have images folder to able use photo upload properly
 
 ***
 
-!![image](https://user-images.githubusercontent.com/88773094/198420788-6d944c2b-5669-47fc-b57f-770dbb75bf2a.png)
+![valmischat](https://user-images.githubusercontent.com/88773094/198421114-fb84d204-ca29-4bb6-805b-d79d351bdbdc.png)
 
 ***
 
