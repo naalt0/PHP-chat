@@ -62,7 +62,7 @@ if (isset($_POST['upload'])) {
                 <input class="form-control" type="file" name="uploadfile" value="" />
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" type="submit" name="upload">UPLOAD</button>
+                <button class="btn btn-primary" type="submit" name="upload">Upload</button>
             </div>
         </form>
     </div>
@@ -70,8 +70,8 @@ if (isset($_POST['upload'])) {
 
 <form action="" method="POST">
   <div class="messages">
-        from<input type="text" name="username"></input><br>
-        message<input name="message"></input><br>
+        From<input type="text" name="username"></input><br>
+        Message<input name="message"></input><br>
         <button name="submit" type="submit">Send</button>
   </div>
       </form>

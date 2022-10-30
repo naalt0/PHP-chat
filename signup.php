@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO User (pwd, username) VALUES ('$password', '$username')";
     mysqli_query($conn, $sql);
 
-    header("location: landing.php");
+    header("location: chat.php");
 }
 ?>
 

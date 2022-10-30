@@ -12,7 +12,7 @@ session_start();
 
         if(mysqli_num_rows($result) > 0) {
             $_SESSION['user'] = $username;
-            header("Location: landing.php");
+            header("Location: chat.php");
         } else {
             echo "<p class='error'><i class='bx bxs-error'></i> Wrong Password or Username</p>";
         }
