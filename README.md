@@ -6,6 +6,14 @@ This website is made with PHP, SQL, HTML, CSS
 Most used button combination is CTRL + C and CTRL + V
 
 ***
+Note this!
+---
+This website works correctly only at loclahost!
+
+
+You also need "images" folder for the images work correctly.
+
+***
 
 1. Create account
 2. Login
