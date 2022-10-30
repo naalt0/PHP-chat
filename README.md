@@ -24,4 +24,5 @@ Login page
 ---
 Chat page
 ![4 page](https://user-images.githubusercontent.com/88773094/198898281-bf572cbf-239b-4207-8f76-86fbcdeab8b6.png)
+---
 ![4 2 page](https://user-images.githubusercontent.com/88773094/198898283-c38032fe-156e-4d4e-a3a6-c88020e89e54.png)
