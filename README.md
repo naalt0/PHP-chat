@@ -2,7 +2,8 @@
 Chat with database
 
 This website is made with PHP, SQL, HTML, CSS
-***
+
+
 Most used button combination is CTRL + C and CTRL + V
 
 ***
