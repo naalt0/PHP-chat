@@ -8,7 +8,7 @@ Most used button combination is CTRL + C and CTRL + V
 ***
 Note this!
 ---
-This website works correctly only at loclahost!
+This website works correctly only at localhost!
 
 
 You also need "images" folder for the images work correctly.
