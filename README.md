@@ -1,4 +1,4 @@
-#Chat with database
+Chat with database
 ---
 This website is made with PHP, SQL, HTML, CSS
 
