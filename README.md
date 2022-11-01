@@ -11,7 +11,7 @@ Note this!
 This website works correctly only at localhost!
 
 
-You also need "images" folder for the images work correctly.
+You also need "image" folder for the images work correctly.
 
 ***
 
