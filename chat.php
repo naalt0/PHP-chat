@@ -1,5 +1,5 @@
 <?php 
-  include ("config.php");
+include ("config.php");
 
 if(isset($_POST['submit'])) {
 
@@ -22,18 +22,25 @@ while($row = $sqlresult->fetch_array()) {
 
 error_reporting(0);
  
-$msg = "";
+
+
+//image upload
  
 if (isset($_POST['upload'])) {
  
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "./image/" . $filename;
+    $folder = "image/" . $filename;
  
     $sql = "INSERT INTO Pics (filename) VALUES ('$filename')";
  
     mysqli_query($conn, $sql);
- 
+
+    if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"],$folder)) {
+        echo "<h3>  Image uploaded successfully!</h3>";
+    } else {
+        echo "<h3>  Failed to upload image!</h3>";
+    } 
 }
 ?>
 
@@ -43,6 +50,14 @@ if (isset($_POST['upload'])) {
     <link rel="stylesheet" href="chat.css">
   </head>
 <body>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+   $(document).ready(function(){
+   window.history.replaceState("","",window.location.href)
+   });
+</script>
+
 <div id="display-image">
     <?php
         $query = "SELECT * FROM Pics ";
@@ -50,16 +65,16 @@ if (isset($_POST['upload'])) {
  
         while ($data = mysqli_fetch_assoc($result)) {
     ?>
-        <img src="./image/<?php echo $data['filename']; ?>">
+        <img src=" <?php echo "image/" . $data['filename']; ?>">
  
     <?php
         }
     ?>
     </div>
 <div id="content">
-        <form method="POST" action="">
+        <form method="POST" action="" enctype="multipart/form-data">
             <div class="form-group">
-                <input class="form-control" type="file" name="uploadfile" value="" />
+                <input class="form-control" type="file" name="uploadfile" id="uploadfile" value="" />
             </div>
             <div class="form-group">
                 <button class="btn btn-primary" type="submit" name="upload">Upload</button>
