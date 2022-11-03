@@ -1,17 +1,21 @@
 <?php 
+session_start();
 include ("config.php");
+$user = $_SESSION["User"];
+
+$get_username = "SELECT username FROM Chatmessage, User WHERE user_id = userID";
 
 if(isset($_POST['submit'])) {
 
-$username = $_POST['username'];  
+  
 $message = $_POST['message'];
 
-$msg = "INSERT INTO Chatmessage (username, message) VALUES ('$username', '$message')";
+$msg = "INSERT INTO Chatmessage (user_id, message) VALUES ('$user', '$message')";
 mysqli_query($conn, $msg);
 
 }
 
-$sql = "SELECT username, message FROM Chatmessage";
+$sql = "SELECT username, message FROM Chatmessage, User WHERE userID = user_id";
 $sqlresult = mysqli_query($conn, $sql);
 $check = mysqli_num_rows($sqlresult);
 
@@ -74,7 +78,7 @@ if (isset($_POST['upload'])) {
 <div id="content">
         <form method="POST" action="" enctype="multipart/form-data">
             <div class="form-group">
-                <input class="form-control" type="file" name="uploadfile" id="uploadfile" value="" />
+                <input class="form-control" type="file" name="uploadfile" id="uploadfile" value="" required />
             </div>
             <div class="form-group">
                 <button class="btn btn-primary" type="submit" name="upload">Upload</button>
@@ -85,7 +89,6 @@ if (isset($_POST['upload'])) {
 
 <form action="" method="POST">
   <div class="messages">
-        From<input type="text" name="username"></input><br>
         Message<input name="message"></input><br>
         <button name="submit" type="submit">Send</button>
   </div>
