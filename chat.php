@@ -4,6 +4,7 @@ include ("config.php");
 $user = $_SESSION["User"];
 
 $get_username = "SELECT username FROM Chatmessage, User WHERE user_id = userID";
+$get_images = "SELECT message_id FROM Pics, User WHERE message_id = userID";
 
 if(isset($_POST['submit'])) {
 
@@ -35,10 +36,10 @@ if (isset($_POST['upload'])) {
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
     $folder = "image/" . $filename;
- 
-    $sql = "INSERT INTO Pics (filename) VALUES ('$filename')";
- 
+
+    $sql = "INSERT INTO Pics (message_id, filename) VALUES ('$user', '$filename')";
     mysqli_query($conn, $sql);
+
 
     if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"],$folder)) {
         echo "<h3>  Image uploaded successfully!</h3>";
@@ -63,11 +64,12 @@ if (isset($_POST['upload'])) {
 </script>
 
 <div id="display-image">
-    <?php
-        $query = "SELECT * FROM Pics ";
+<?php
+        $query = "SELECT username, filename FROM User, Pics WHERE userID = message_id";
         $result = mysqli_query($conn, $query);
  
         while ($data = mysqli_fetch_assoc($result)) {
+           echo "<p>" . $data["username"] . "</p>";
     ?>
         <img src=" <?php echo "image/" . $data['filename']; ?>">
  
